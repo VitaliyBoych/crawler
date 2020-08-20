@@ -25,12 +25,7 @@ def get_links():
     with open('links.txt', 'w') as w:
         for p in params:
             _id = p.split(',')[0]
-            try:
-                amount = int(p.split(',')[1])
-            except:
-                break
-            if amount > 3000:
-                amount = 3000
+            amount = int(p.split(',')[1])
             for i in range(0, int(amount / 200) + 1):
                 url = f'https://www.---.sg/_c/v1/desktop/list_catalog_full?' \
                       f'sort=popularity&dir=desc&offset={i * 200}&limit=200&brand={_id}\n '
